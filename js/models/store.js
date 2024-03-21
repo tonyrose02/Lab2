@@ -24,4 +24,9 @@ const removeFromStore = (uid) => {
     return store
 }
 
-export { getStore, createStore, removeFromStore}
+const updateStore = (todo)=>{
+    const index = store.findIndex((item)=> item.uid === todo.uid)
+    store = [...store.slice(0,index),todo, ...store.slide(index + 1)]
+    return store
+}
+export { getStore, createStore, removeFromStore,updateStore}
