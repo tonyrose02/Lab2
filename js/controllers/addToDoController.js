@@ -10,7 +10,6 @@ let uid
 export function addTodoController (itemUid)
 {
   uid = itemUid
-  
   dialog = document.querySelector('#create-to-do')
   exitButton = dialog.querySelector('#exit')
   closeButton = dialog.querySelector('#close')
@@ -25,9 +24,9 @@ function configureListeners()
 {
   exitButton.addEventListener('click',onCloseDialog)
   closeButton.addEventListener('click',onCloseDialog)
-  form.addEventListener('submit',onCreateToDoItem)
+  form.addEventListener('submit',onAddToDoItem)
 }
-function onCreateToDoItem (e)
+function onAddToDoItem (e)
 {
   e.preventDefault()
   const todo = e.currentTarget.todo.value.trim()
@@ -39,7 +38,7 @@ function onCreateToDoItem (e)
     status,
     uid,
   })
-  
+  form.reset()
 }
 function onCloseDialog (e)
 {
