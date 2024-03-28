@@ -2,6 +2,7 @@ import { toDoItemTemplate } from "../templates/toDoItemTemplate";
 import { subscribe } from "../models/toDoListModel";
 import { deleteToDoController } from "../controllers/deleteToDoController";
 import { updateTodoController } from "../controllers/updateToDoController";
+import { addTodoController } from "../controllers/addToDoController";
 let view
 
 export function toDoListView ()
@@ -31,8 +32,10 @@ function onHandleClick (e)
         deleteToDoController(e.target.dataset.uid)
         break
     case 'edit':
-      console.log(e.target.dataset.uid)
       updateTodoController(e.target.dataset.uid)
+      break
+    case 'add':
+      addTodoController(e.target.dataset.uid)
       break
     default:
       null;
