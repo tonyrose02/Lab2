@@ -4,20 +4,18 @@ let dialog
 let closeButton
 let exitButton
 let form
-let uid
 
 
-export function addTodoController (itemUid)
+export function addTodoController ()
 {
-  uid = itemUid
   dialog = document.querySelector('#create-to-do')
   exitButton = dialog.querySelector('#exit')
   closeButton = dialog.querySelector('#close')
   form = dialog.querySelector('form')
   configureListeners()
   dialog.showModal()
+  form.reset()
 }
-
 
 
 function configureListeners()
@@ -36,9 +34,7 @@ function onAddToDoItem (e)
     todo,
     category,
     status,
-    uid,
   })
-  form.reset()
 }
 function onCloseDialog (e)
 {

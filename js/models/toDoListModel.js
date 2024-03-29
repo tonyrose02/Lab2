@@ -45,9 +45,8 @@ export function updateTodo (updateTodo)
 }
 export function addTodo (createTodo)
 {
-  let payload = createTodo
   const dbRef = ref(db,`todos`)
-  push(dbRef,payload)
-  const store = createStore(payload)
+  push(dbRef,createTodo).key
+  const store = updateStore(createTodo)
   notify(store)
 }

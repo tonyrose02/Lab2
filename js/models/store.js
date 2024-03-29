@@ -29,4 +29,5 @@ const updateStore = (todo)=>{
     store = [...store.slice(0, index), todo, ...store.slice(index +1) ]
     return store
 }
+
 export { getStore, createStore, removeFromStore,updateStore}
