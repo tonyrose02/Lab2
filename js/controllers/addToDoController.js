@@ -16,8 +16,6 @@ export function addTodoController ()
   dialog.showModal()
   form.reset()
 }
-
-
 function configureListeners()
 {
   exitButton.addEventListener('click',onCloseDialog)
@@ -34,7 +32,9 @@ function onAddToDoItem (e)
     todo,
     category,
     status,
+
   })
+  onCloseDialog()
 }
 function onCloseDialog (e)
 {
